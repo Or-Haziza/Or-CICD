@@ -57,12 +57,7 @@
       ansible.builtin.command:
         cmd: docker build -t orapp /opt/my-app
 
-    - name: Commit changes to local Git repository
-      ansible.builtin.command:
-        cmd: git -C /opt/my-app add . && git -C /opt/my-app commit -m "Updated Docker image"  
-    - name: Push changes to remote Git repository
-      ansible.builtin.command:
-        cmd: git -C /opt/my-app push origin master 
+    
 
     - name: Start Docker app
       ansible.builtin.command:
